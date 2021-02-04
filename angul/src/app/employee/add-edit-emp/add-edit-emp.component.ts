@@ -15,7 +15,6 @@ export class AddEditEmpComponent implements OnInit , OnChanges, DoCheck {
   EmployeeName:string;
   Salary:string;
 
-  EmpList:any=[];
 
   
   ngOnChanges(changes:SimpleChanges){
@@ -37,17 +36,14 @@ export class AddEditEmpComponent implements OnInit , OnChanges, DoCheck {
   ngOnDestroy(){
     console.log("ngOnDestroy destroyed")
   }
+  
   loadEmpList(){
-    this.service.getAllEmpNames().subscribe((data:any)=>{
-      console.log("update",data)
-      this.EmpList=data;
       this.EmployeeId=this.emp.EmployeeId;
       console.log("empid",this.EmployeeId)
       this.EmployeeName=this.emp.EmployeeName;
       console.log("emp previous name",this.EmployeeName)
 
       this.Salary=this.emp.Salary;
-    });
   }
 
   addEmployee(){
