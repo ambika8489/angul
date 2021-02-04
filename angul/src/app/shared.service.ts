@@ -31,7 +31,7 @@ readonly APIUrl = "http://127.0.0.1:8000";
 
   
 
-  getAllDepartmentNames():Observable<any[]>{
+  getAllEmpNames():Observable<any[]>{
     return this.http.get<any[]>(this.APIUrl+'/department/');
   }
 
